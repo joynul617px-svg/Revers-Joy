@@ -13,6 +13,10 @@
         android:theme="@style/Theme.ReversJoy">
 
         <activity
+            android:name=".EditorActivity"
+            android:screenOrientation="portrait" />
+
+        <activity
             android:name=".VideoPreviewActivity"
             android:screenOrientation="portrait" />
 
