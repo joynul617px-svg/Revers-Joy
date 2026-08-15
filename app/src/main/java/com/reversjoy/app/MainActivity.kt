@@ -1,23 +1,37 @@
 package com.reversjoy.app
 
 import android.os.Bundle
-import android.widget.TextView
 import androidx.appcompat.app.AppCompatActivity
-import androidx.core.content.ContextCompat
+import com.reversjoy.app.databinding.ActivityMainBinding
 
 class MainActivity : AppCompatActivity() {
+
+    private lateinit var binding: ActivityMainBinding
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
 
-        val title = TextView(this).apply {
-            text = "Revers Joy"
-            textSize = 32f
-            setTextColor(ContextCompat.getColor(context, android.R.color.white))
-            setBackgroundColor(ContextCompat.getColor(context, android.R.color.black))
-            gravity = android.view.Gravity.CENTER
+        binding = ActivityMainBinding.inflate(layoutInflater)
+        setContentView(binding.root)
+
+        binding.importVideoButton.setOnClickListener {
+            // Video picker will be added next
         }
 
-        setContentView(title)
+        binding.trackingButton.setOnClickListener {
+            // AI tracking will be added later
+        }
+
+        binding.cameraButton.setOnClickListener {
+            // Auto camera movement will be added later
+        }
+
+        binding.filterButton.setOnClickListener {
+            // Filters will be added later
+        }
+
+        binding.vibranceButton.setOnClickListener {
+            // Vibrance controls will be added later
+        }
     }
 }
