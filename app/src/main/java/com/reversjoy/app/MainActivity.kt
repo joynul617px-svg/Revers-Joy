@@ -17,9 +17,7 @@ class MainActivity : AppCompatActivity() {
         ) { uri: Uri? ->
 
             uri?.let {
-                val intent = Intent(this, VideoPreviewActivity::class.java)
-                intent.putExtra("video_uri", it.toString())
-                startActivity(intent)
+                openEditor(it)
             }
         }
 
@@ -32,9 +30,30 @@ class MainActivity : AppCompatActivity() {
         binding.importVideoButton.setOnClickListener {
             videoPicker.launch("video/*")
         }
+
+        binding.trackingButton.setOnClickListener {
+            // Tracking will be added later
+        }
+
+        binding.cameraButton.setOnClickListener {
+            // Auto Camera will be added later
+        }
+
+        binding.filterButton.setOnClickListener {
+            // Filters will be added later
+        }
+
+        binding.vibranceButton.setOnClickListener {
+            // Vibrance will be added later
+        }
     }
-}        binding.cameraButton.setOnClickListener {
-            // Auto Camera Movement - later
+
+    private fun openEditor(uri: Uri) {
+        val intent = Intent(this, EditorActivity::class.java)
+        intent.putExtra("video_uri", uri.toString())
+        startActivity(intent)
+    }
+}            // Auto Camera Movement - later
         }
 
         binding.filterButton.setOnClickListener {
