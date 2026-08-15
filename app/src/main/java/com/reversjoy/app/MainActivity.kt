@@ -1,5 +1,6 @@
 package com.reversjoy.app
 
+import android.content.Intent
 import android.net.Uri
 import android.os.Bundle
 import androidx.activity.result.contract.ActivityResultContracts
@@ -16,7 +17,9 @@ class MainActivity : AppCompatActivity() {
         ) { uri: Uri? ->
 
             uri?.let {
-                openVideoPreview(it)
+                val intent = Intent(this, VideoPreviewActivity::class.java)
+                intent.putExtra("video_uri", it.toString())
+                startActivity(intent)
             }
         }
 
@@ -29,12 +32,8 @@ class MainActivity : AppCompatActivity() {
         binding.importVideoButton.setOnClickListener {
             videoPicker.launch("video/*")
         }
-
-        binding.trackingButton.setOnClickListener {
-            // Body / Face / Hand Tracking - next step
-        }
-
-        binding.cameraButton.setOnClickListener {
+    }
+}        binding.cameraButton.setOnClickListener {
             // Auto Camera Movement - later
         }
 
