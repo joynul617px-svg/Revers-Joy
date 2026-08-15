@@ -15,7 +15,6 @@ class MainActivity : AppCompatActivity() {
         registerForActivityResult(
             ActivityResultContracts.GetContent()
         ) { uri: Uri? ->
-
             uri?.let {
                 openEditor(it)
             }
@@ -53,19 +52,4 @@ class MainActivity : AppCompatActivity() {
         intent.putExtra("video_uri", uri.toString())
         startActivity(intent)
     }
-}            // Auto Camera Movement - later
-        }
-
-        binding.filterButton.setOnClickListener {
-            // Filters - later
-        }
-
-        binding.vibranceButton.setOnClickListener {
-            // Vibrance - later
-        }
-    }
-
-    private fun openVideoPreview(uri: Uri) {
-        // Video preview will be added in the next step.
-    }
-}}
+}
