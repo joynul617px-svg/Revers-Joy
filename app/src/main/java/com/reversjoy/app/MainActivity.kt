@@ -52,4 +52,22 @@ class MainActivity : AppCompatActivity() {
         intent.putExtra("video_uri", uri.toString())
         startActivity(intent)
     }
+}        binding.cameraButton.setOnClickListener {
+            // Auto Camera will be added later
+        }
+
+        binding.filterButton.setOnClickListener {
+            // Filters will be added later
+        }
+
+        binding.vibranceButton.setOnClickListener {
+            // Vibrance will be added later
+        }
+    }
+
+    private fun openEditor(uri: Uri) {
+        val intent = Intent(this, EditorActivity::class.java)
+        intent.putExtra("video_uri", uri.toString())
+        startActivity(intent)
+    }
 }
